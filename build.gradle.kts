@@ -38,6 +38,7 @@ dependencies {
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktorVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 
+    implementation("org.liquibase:liquibase-core:4.11.0")
     liquibaseRuntime("org.liquibase:liquibase-core:4.11.0")
     liquibaseRuntime("ch.qos.logback:logback-core:$logbackVersion")
     liquibaseRuntime("ch.qos.logback:logback-classic:$logbackVersion")
