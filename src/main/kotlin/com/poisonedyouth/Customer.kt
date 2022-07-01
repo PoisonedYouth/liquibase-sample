@@ -66,6 +66,7 @@ private object AddressTable : LongIdTable(name = "address", "id") {
     val zipCode: Column<String> = varchar("zip_code", 255)
     val street: Column<String> = varchar("street", 255)
     val streetNumber: Column<Int?> = integer("street_number").nullable()
+    val country: Column<String> = varchar("country", 255)
 }
 
 @kotlinx.serialization.Serializable
@@ -74,7 +75,8 @@ data class Address(
     val city: String,
     val zipCode: String,
     val street: String,
-    val streetNumber: Int?
+    val streetNumber: Int?,
+    val country: String
 ) {
 
     companion object {
@@ -83,7 +85,8 @@ data class Address(
             city = it[AddressTable.city],
             zipCode = it[AddressTable.zipCode],
             street = it[AddressTable.street],
-            streetNumber = it[AddressTable.streetNumber]
+            streetNumber = it[AddressTable.streetNumber],
+            country = it[AddressTable.country]
         )
     }
 }
